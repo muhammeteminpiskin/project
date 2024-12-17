@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	const int a=3;
+	const int b=3;
+	int matA[a][b];
+	int matB[a][b];
+	int matC[a][b];
+	int matD[a][b];
+	
+	cout<<"A matrisin elemanlari gir: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<i+1<<". satir ";
+			cout<<j+1<<". sutun elemani: ";
+			cin>>matA[i][j];
+		}
+	}
+	cout<<endl;
+	
+	cout<<"B matrisin elemanlari gir: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<i+1<<". satir ";
+			cout<<j+1<<". sutun elemani: ";
+			cin>>matB[i][j];
+		}
+	}
+	
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			matC[i][j]=matA[i][j]+matB[i][j];
+		}
+	}
+	
+		for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			matD[i][j]=matA[i][j]*matB[i][j];
+		}
+	}
+	cout<<endl;
+	
+		cout<<"A matrisi: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<matA[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+		cout<<"B matrisi: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<matB[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;	
+	
+	cout<<"A matrisi + B matrisi: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<matC[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	cout<<"A matrisi x B matrisi: "<<endl;
+	for(int i=0;i<3;i++){
+		for(int j=0;j<3;j++){
+			cout<<matD[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+	cout<<"det(A): ";
+	
+	int top1=0,top2=0,top3=0,top4=0,top5=0,top6=0;
+	top1=matA[0][0]+matA[1][1]+matA[2][2];
+	top2=matA[1][0]+matA[2][1]+matA[0][2];
+	top3=matA[2][0]+matA[0][1]+matA[1][2];
+	top4=matA[0][2]+matA[0][1]+matA[0][0];
+	top5=matA[0][2]+matA[0][1]+matA[0][0];
+	top6=matA[0][2]+matA[0][1]+matA[0][0];
+	
+	int detA=0;
+	detA=top1+top2+top3-top4-top5-top6;
+	cout<<detA;
+	
+	
+	return 0;
+	
+}
