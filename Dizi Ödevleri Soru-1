@@ -1,0 +1,66 @@
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+using namespace std;
+
+int main(){
+	srand(time(NULL));
+	int yil = 5;
+	int ay = 12;
+	int dizi[yil][ay];
+	int ortdizi[yil];
+	int girilenYil;
+	int girilenYil1;
+
+
+	
+	for(int i=0;i<5;i++){
+		int toplam=0;
+		for(int j=0;j<12;j++){
+			dizi[i][j] = rand()%(5000-100)+100;
+			toplam+=dizi[i][j];
+		}
+	ortdizi[i]=toplam/12;
+	}
+	
+	cout<<"deger giriniz(1-5): ";
+	cin>>girilenYil1;
+	girilenYil=girilenYil1-1;
+	cout<<girilenYil1<<". yilin ortalamasi "<<ortdizi[girilenYil]<<endl;
+	cout<<girilenYil1<<". yildaki ortalamadan buyuk olan aylarin cirolari: "<<endl;
+		for(int i=0;i<12;i++){
+			if(dizi[girilenYil][i]>ortdizi[girilenYil]){
+				cout<<i+1<<". ay = "<<dizi[girilenYil][i]<<endl;
+			}
+		}
+		
+	cout<<"deger girin: ";
+	cin>>girilenYil1;
+	girilenYil=girilenYil1-1;
+	int a=0;
+	cout<<girilenYil1<<". yilin ilk ceyreginin ortalamasi: ";
+	for(int i=0;i<3;i++){
+		a+=dizi[girilenYil][i];
+	}
+	cout<<a/3<<endl;
+	int b=0;
+		cout<<girilenYil1<<". yilin ikinci ceyreginin ortalamasi: ";
+	for(int i=3;i<6;i++){
+		b+=dizi[girilenYil][i];
+	}
+	cout<<b/3<<endl;
+	int c=0;
+		cout<<girilenYil1<<". yilin ucuncu ceyreginin ortalamasi: ";
+		for(int i=6;i<9;i++){
+		c+=dizi[girilenYil][i];
+	}
+	cout<<c/3<<endl;
+		int d=0;
+		cout<<girilenYil1<<". yilin son ceyreginin ortalamasi: ";
+		for(int i=9;i<12;i++){
+		d+=dizi[girilenYil][i];
+	}
+	cout<<d/3<<endl;
+	
+	return 0;
+}
